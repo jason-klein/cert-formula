@@ -26,9 +26,9 @@ cert_packages:
   {% set key_dir = data.get('key_dir', map.key_dir) %}
 
 
-{{ cert_dir }}/{{ name }}:
+{{ cert_dir }}/{{ name }}.crt:
   file.managed:
-    - source: salt://cert/{{ name }}
+    - source: salt://cert/{{ name }}.crt
     - user: {{ cert_user }}  
     - group: {{ cert_group }}  
     - mode: {{ cert_mode }}  
